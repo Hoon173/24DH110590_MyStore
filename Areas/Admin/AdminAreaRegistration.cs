@@ -18,6 +18,7 @@ namespace _24DH110590_MyStore.Areas.Admin
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
+            
             );
         }
     }
