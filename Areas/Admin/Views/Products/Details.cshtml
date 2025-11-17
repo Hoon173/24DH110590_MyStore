@@ -1,0 +1,48 @@
+﻿@model _24DH110590_MyStore.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<head>
+    <style>
+        img {
+            height: 250px;
+            max-height: 250px;
+        }
+    </style>
+</head>
+<h2 class="bg-success">THÔNG TIN CHI TIẾT SẢN PHẨM </h2>
+
+<div>
+    <hr />
+    <div class="div-horizontal">
+        <div class="col-md-4">
+            <img src="@Html.DisplayFor(model => model.ProductImage)"/>
+        </div>
+        <div class="col-md-8">
+            <dl>
+                <dt>Tên sản phẩm</dt>
+                <dd>@Html.DisplayFor(model => model.ProductName)</dd>
+
+                <dt>Mô tả</dt>
+                <dd>@Html.DisplayFor(model => model.ProductDescription)</dd>
+
+                <dt>Đơn giá</dt>
+                <dd>@Html.DisplayFor(model => model.ProductPrice)</dd>
+
+                <dt>Danh mục</dt>
+                <dd>@Html.DisplayFor(model => model.Category.CategoryName)</dd>
+
+
+
+                <dt style="padding: 10px"></dt>
+                <dd style="padding: 10px">
+                    @Html.ActionLink("Cập nhât", "Edit", new { id = Model.ProductID }, new { @class = "btn btn-primary btn-sm" }) |
+                    @Html.ActionLink("Quay lại danh sách", "Index", null, new { @class = "btn btn-primary btn-sm " })
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
